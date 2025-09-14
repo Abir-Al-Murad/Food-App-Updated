@@ -1,0 +1,19 @@
+<svg viewBox="0 0 45 49" xmlns="http://www.w3.org/2000/svg" width="45" height="49" fill="none">
+	<!-- Cart Background Circle -->
+	<circle cx="22.5" cy="26.5" r="22.5" fill="rgb(24,28,46)" />
+
+	<!-- Shopping Bag Icon -->
+	<g>
+		<path d="M14 21L14 35C14 35.53 14.21 36.04 14.59 36.41C14.96 36.79 15.47 37 16 37L30 37C30.53 37 31.04 36.79 31.41 36.41C31.79 36.04 32 35.53 32 35L32 21L29 17L17 17L14 21Z"
+			fill="none" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+		<path d="M14 21L32 21" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+		<path d="M27 25C27 26.06 26.58 27.08 25.83 27.83C25.08 28.58 24.06 29 23 29C21.94 29 20.92 28.58 20.17 27.83C19.42 27.08 19 26.06 19 25"
+			fill="none" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+	</g>
+
+	<!-- Notification Badge -->
+	<g>
+		<circle cx="32.5" cy="12.5" r="12.5" fill="rgb(255,118,34)" />
+		<text x="32.5" y="17" text-anchor="middle" fill="white" font-size="8" font-family="Arial" font-weight="bold">2</text>
+	</g>
+</svg>
