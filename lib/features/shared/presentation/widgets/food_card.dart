@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:foodappjava/features/shared/presentation/utils/icon_card.dart';
 
 class FoodCard extends StatelessWidget {
   const FoodCard({
@@ -48,34 +49,11 @@ class FoodCard extends StatelessWidget {
           const SizedBox(height: 8),
           Row(
             children: [
-              Container(
-                child: Row(
-                  children: [
-                    SvgPicture.asset("assets/images/star.svg"),
-                    Text(" 4.7"),
-                  ],
-                ),
-              ),
+              IconCard.ratingCard(rating: '4.7'),
               const SizedBox(width: 20),
-              Container(
-                child: Row(
-                  children: [
-                    SvgPicture.asset(
-                      "assets/images/delivery.svg",
-                    ),
-                    Text(" $deliveryFee"),
-                  ],
-                ),
-              ),
+              IconCard.deliveryCard(deliveryFee: 'Free'),
               const SizedBox(width: 20),
-              Container(
-                child: Row(
-                  children: [
-                    SvgPicture.asset("assets/images/clock.svg"),
-                    Text(" $duration"),
-                  ],
-                ),
-              ),
+              IconCard.durationCard(duration: '20min'),
             ],
           ),
         ],

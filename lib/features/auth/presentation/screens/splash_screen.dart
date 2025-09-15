@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: SafeArea(child: Stack(
         children: [
-          SvgPicture.asset('assets/images/Splash Page_02.svg'),
+          SvgPicture.asset('assets/images/Splash_Page_02.svg'),
           Center(
             child: SvgPicture.asset('assets/images/food_logo.svg'),
           )

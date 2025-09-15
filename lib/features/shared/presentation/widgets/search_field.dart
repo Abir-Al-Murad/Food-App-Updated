@@ -7,11 +7,13 @@ class SearchField extends StatefulWidget {
     required this.hintText,
     this.onTap,
     this.controller,
+    this.focusNode,
   });
 
   final String hintText;
   final VoidCallback? onTap;
   final TextEditingController? controller;
+  final FocusNode? focusNode;
 
   @override
   State<SearchField> createState() => _SearchFieldState();
@@ -36,6 +38,7 @@ class _SearchFieldState extends State<SearchField> {
         absorbing: widget.onTap != null,
         child: TextField(
           controller: widget.controller ?? _controller,
+          focusNode: widget.focusNode??null,
           decoration: InputDecoration(
             suffixIcon: _controller.text.isNotEmpty
                 ? IconButton(
