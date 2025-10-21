@@ -9,8 +9,7 @@ import 'package:foodappjava/features/shared/presentation/widgets/food_card.dart'
 import 'package:foodappjava/features/shared/presentation/widgets/search_field.dart';
 import '../../../shared/presentation/widgets/Profile_Header.dart';
 import '../../../shared/presentation/widgets/title_row.dart';
-import '../../data/model/drawer_item.dart';
-import '../widgets/decorated_list_tile.dart';
+import '../widgets/cart_logo.dart';
 import '../widgets/grey_container.dart';
 
 class HomeScreenV1 extends StatefulWidget {
@@ -75,10 +74,7 @@ class _HomeScreenV1State extends State<HomeScreenV1> {
               },
               icon: SvgPicture.asset(
                 AssetsPath.menuIcon,
-                height: 45,
-                width: 45,
               ),
-              iconSize: 45,
             );
           },
         ),
@@ -111,18 +107,7 @@ class _HomeScreenV1State extends State<HomeScreenV1> {
           ],
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, MyCart.name);
-              },
-              icon: SvgPicture.asset(
-                AssetsPath.CartLogo,
-
-              ),
-            ),
-          ),
+          CartLogo(),
         ],
       ),
       body: SingleChildScrollView(
@@ -214,6 +199,7 @@ class _HomeScreenV1State extends State<HomeScreenV1> {
               );
   }
 }
+
 
 
 

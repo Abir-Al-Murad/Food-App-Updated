@@ -11,7 +11,7 @@ class AssetsPath{
   static String personLogo = 'assets/images/personal_info.svg';
   static String addressLogo = 'assets/images/address_logo.svg';
   static String blueCartLogo = 'assets/images/blue_cart.svg';
-  static String CartLogo = 'assets/images/Cart.svg';
+  static String cartLogo = 'assets/images/raw_cart.svg';
   static String purpleHeartLogo = 'assets/images/purple_heart.svg';
   static String notificationLogo = 'assets/images/notification.svg';
   static String paymentLogo = 'assets/images/payment.svg';
@@ -26,4 +26,6 @@ class AssetsPath{
   static String editIcon = 'assets/images/editIcon.svg';
   static String deleteIcon = 'assets/images/delete_icon.svg';
   static String addIcon = 'assets/images/add_icon.svg';
+  static String burgerPNG = 'assets/images/burger.png';
+  static String callIcon = 'assets/images/call_icon.svg';
 }

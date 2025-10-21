@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:foodappjava/app/app.dart';
 import 'package:foodappjava/features/address/presentation/screens/address.dart';
 import 'package:foodappjava/features/cart/presentation/screens/my_cart.dart';
+import 'package:foodappjava/features/order/presentation/screens/order_list_screen.dart';
+import 'package:foodappjava/features/order/presentation/screens/order_tracking_screen.dart';
 import 'package:foodappjava/features/personal/presentation/screens/personal_info_screen.dart';
 
 import '../../../app/assets_path.dart';
@@ -40,6 +42,10 @@ class ListOfData{
           Navigator.pushNamed(FoodApp.navigatorKey.currentState!.context, MyCart.name);
         },
       ),
+      DrawerItem(title: "Orders", imageInfo: AssetsPath.userReviewLogo, onTap: () {
+        Navigator.pushNamed(FoodApp.navigatorKey.currentState!.context, OrderListScreen.name);
+      }),
+
       DrawerItem(
         title: "Favorites",
         imageInfo: AssetsPath.purpleHeartLogo,
@@ -67,7 +73,6 @@ class ListOfData{
     ];
     final List<DrawerItem> drawerItem3 = [
       DrawerItem(title: "FAQs", imageInfo: AssetsPath.faqsLogo, onTap: () {}),
-      DrawerItem(title: "User Reviews", imageInfo: AssetsPath.userReviewLogo, onTap: () {}),
       DrawerItem(title: "Settings", imageInfo: AssetsPath.settingsLogo, onTap: () {}),
     ];
     final List<DrawerItem> drawerItem4 = [

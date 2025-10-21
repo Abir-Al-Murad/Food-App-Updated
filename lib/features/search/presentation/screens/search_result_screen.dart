@@ -62,16 +62,18 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
           SizedBox(width: 20,),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Popular Burgers",style: Theme.of(context).textTheme.titleLarge,),
-            const SizedBox(height: 100,),
-            DoubleContainerGridView(title: 'Burger Bistro', restaurantName: "Rose Garden", imageUrl: ""),
-
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Popular Burgers",style: Theme.of(context).textTheme.titleLarge,),
+              const SizedBox(height: 100,),
+              DoubleContainerGridView(title: 'Burger Bistro', restaurantName: "Rose Garden", imageUrl: ""),
+        
+            ],
+          ),
         ),
       ),
     );

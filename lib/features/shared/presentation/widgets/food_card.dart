@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:foodappjava/app/app_colors.dart';
+import 'package:foodappjava/app/assets_path.dart';
 import 'package:foodappjava/features/restaurant/presentation/screens/restaurant_details_screen.dart';
 import 'package:foodappjava/features/shared/presentation/widgets/rating_fee_time.dart';
 
@@ -33,10 +36,13 @@ class FoodCard extends StatelessWidget {
               width: double.maxFinite,
               height: 200,
               decoration: BoxDecoration(
-                color: Color(0xff98A8B8),
+                // color: AppColors.themeGrey,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: ClipRRect(),
+              child: Image.asset(AssetsPath.burgerPNG,fit: BoxFit.scaleDown,errorBuilder: (_,__,___){
+                return Icon(Icons.error_outline);
+              },
+            ),
             ),
             const SizedBox(height: 5),
             Text(
