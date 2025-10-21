@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:foodappjava/features/home/presentation/screens/search_screen.dart';
+import 'package:foodappjava/app/app_colors.dart';
+import 'package:foodappjava/app/assets_path.dart';
+import 'package:foodappjava/features/cart/presentation/screens/my_cart.dart';
+import 'package:foodappjava/features/home/data/list_of_data.dart';
+import 'package:foodappjava/features/search/presentation/screens/search_screen.dart';
 import 'package:foodappjava/features/shared/presentation/widgets/food_card.dart';
 import 'package:foodappjava/features/shared/presentation/widgets/search_field.dart';
+import '../../../shared/presentation/widgets/Profile_Header.dart';
 import '../../../shared/presentation/widgets/title_row.dart';
+import '../../data/model/drawer_item.dart';
+import '../widgets/decorated_list_tile.dart';
+import '../widgets/grey_container.dart';
 
 class HomeScreenV1 extends StatefulWidget {
   const HomeScreenV1({super.key});
@@ -16,14 +24,44 @@ class _HomeScreenV1State extends State<HomeScreenV1> {
   String selectedLocation = 'Kawla,Dhaka';
   int selectedIndex = 0;
 
-  List<String> category = ['All', 'Hot Dog', 'Burger','Pizza','Coffee'];
-  List<String> officies = ['Halal Lab Office', 'Haram Lab Office'];
-  String selectedOffice = 'Halal Lab Office';
+  ListOfData data = ListOfData();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.orange.shade300,
+              ),
+              child: ProfileHeader(),
+            ),
+
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+              child: Column(
+                children: [
+                  GreyContainer(items: data.drawerItems,),
+                  SizedBox(height: 18,),
+                  GreyContainer(items: data.drawerItems2),
+                  SizedBox(height: 18,),
+                  GreyContainer(items: data.drawerItem3),
+                  SizedBox(height: 18,),
+                  GreyContainer(items: data.drawerItem4),
+
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+
       appBar: AppBar(
         backgroundColor: Colors.white,
         leadingWidth: 90,
@@ -36,7 +74,7 @@ class _HomeScreenV1State extends State<HomeScreenV1> {
                 Scaffold.of(context).openDrawer();
               },
               icon: SvgPicture.asset(
-                "assets/images/Menu.svg",
+                AssetsPath.menuIcon,
                 height: 45,
                 width: 45,
               ),
@@ -58,13 +96,13 @@ class _HomeScreenV1State extends State<HomeScreenV1> {
             DropdownButtonHideUnderline(
               child: DropdownButton(
                 isDense: true,
-                value: selectedOffice,
+                value: data.selectedOffice,
                 style: TextStyle(fontSize: 14,fontWeight: FontWeight.w300,color: Colors.black),
-                items: officies
+                items: data.officies
                     .map((e) => DropdownMenuItem(value: e, child: Text(e)))
                     .toList(),
                 onChanged: (v) {
-                  selectedOffice = v!;
+                  data.selectedOffice = v!;
                   setState(() {
                   });
                 },
@@ -76,9 +114,11 @@ class _HomeScreenV1State extends State<HomeScreenV1> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, MyCart.name);
+              },
               icon: SvgPicture.asset(
-                "assets/images/Cart.svg",
+                AssetsPath.CartLogo,
 
               ),
             ),
@@ -130,7 +170,7 @@ class _HomeScreenV1State extends State<HomeScreenV1> {
 
   Widget buildCategoryRoundedCard() {
     return ListView.builder(
-                itemCount: category.length,
+                itemCount: data.category.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return GestureDetector(
@@ -162,7 +202,7 @@ class _HomeScreenV1State extends State<HomeScreenV1> {
                                 radius: 30,
                               ),
                               const SizedBox(width: 8),
-                              Text(category[index]),
+                              Text(data.category[index]),
                               SizedBox(width: 10,)
                             ],
                           ),
@@ -174,6 +214,9 @@ class _HomeScreenV1State extends State<HomeScreenV1> {
               );
   }
 }
+
+
+
 
 
 

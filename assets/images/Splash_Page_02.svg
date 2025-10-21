@@ -1,16 +1,16 @@
-<svg viewBox="0 0 375 812" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375.000000" height="812.000000" fill="none" clip-path="url(#clipPath_0)" customFrame="url(#clipPath_0)">
+<svg viewBox="0 0 375 812" xmlns="http://www.w3.org/2000/svg" width="375" height="812" fill="none" clip-path="url(#clipPath_0)">
 	<defs>
 		<clipPath id="clipPath_0">
-			<rect width="375.000000" height="812.000000" x="0.000000" y="0.000000" rx="20.000000" fill="rgb(255,255,255)" />
+			<rect width="375" height="812" rx="20" fill="white"/>
 		</clipPath>
 		<linearGradient id="paint_linear_0" x1="145.61937" x2="132.421646" y1="108.333321" y2="383.333313" gradientUnits="userSpaceOnUse">
-			<stop stop-color="rgb(255,215.985,140.25)" offset="0" stop-opacity="1" />
-			<stop stop-color="rgb(255,118,34)" offset="1" stop-opacity="1" />
+			<stop stop-color="rgb(255,216,140)" offset="0" stop-opacity="1"/>
+			<stop stop-color="rgb(255,118,34)" offset="1" stop-opacity="1"/>
 		</linearGradient>
 	</defs>
-	<rect id="Splash Page_02" width="375.000000" height="812.000000" x="0.000000" y="0.000000" rx="20.000000" fill="rgb(255,255,255)" />
-	<g id="Bg Asset">
-		<circle id="Ellipse 1005" cx="88.5" cy="88.5" r="88.5" opacity="0.0500000007" stroke="rgb(30,30,46)" stroke-dasharray="4 4 " stroke-width="94" transform="matrix(-4.37114e-08,1,-1,-4.37114e-08,137,-121)" />
-		<ellipse id="Ellipse 1006" rx="146.000000" ry="147.500000" cx="146" cy="147.5" stroke="url(#paint_linear_0)" stroke-dasharray="6 6 " stroke-width="200" transform="matrix(-4.37114e-08,1,-1,-4.37114e-08,553,666)" />
+	<rect width="375" height="812" rx="20" fill="white"/>
+	<g>
+		<circle cx="88.5" cy="88.5" r="88.5" opacity="0.05" stroke="rgb(30,30,46)" stroke-dasharray="4 4" stroke-width="94" transform="matrix(-4.37114e-08,1,-1,-4.37114e-08,137,-121)"/>
+		<ellipse rx="146" ry="147.5" cx="146" cy="147.5" stroke="url(#paint_linear_0)" stroke-dasharray="6 6" stroke-width="200" transform="matrix(-4.37114e-08,1,-1,-4.37114e-08,553,666)"/>
 	</g>
 </svg>

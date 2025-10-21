@@ -6,4 +6,24 @@ class AssetsPath{
   static String menuIcon = 'assets/images/Menu.svg';
   static String splashBackground = 'assets/images/Splash_Page_02.svg';
   static String rectangleContainer = 'assets/images/Rectangle_container.svg';
+  static String searchLogo = 'assets/images/Search.svg';
+  static String filterLogo = 'assets/images/Filter.svg';
+  static String personLogo = 'assets/images/personal_info.svg';
+  static String addressLogo = 'assets/images/address_logo.svg';
+  static String blueCartLogo = 'assets/images/blue_cart.svg';
+  static String CartLogo = 'assets/images/Cart.svg';
+  static String purpleHeartLogo = 'assets/images/purple_heart.svg';
+  static String notificationLogo = 'assets/images/notification.svg';
+  static String paymentLogo = 'assets/images/payment.svg';
+  static String settingsLogo = 'assets/images/settings.svg';
+  static String faqsLogo = 'assets/images/faqs.svg';
+  static String userReviewLogo = 'assets/images/user_review.svg';
+  static String logOutLogo = 'assets/images/log_out.svg';
+  static String emailLogo = 'assets/images/email.svg';
+  static String phoneLogo = 'assets/images/phone.svg';
+  static String homeLogo = 'assets/images/home.svg';
+  static String workLogo = 'assets/images/work.svg';
+  static String editIcon = 'assets/images/editIcon.svg';
+  static String deleteIcon = 'assets/images/delete_icon.svg';
+  static String addIcon = 'assets/images/add_icon.svg';
 }

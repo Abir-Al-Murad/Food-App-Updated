@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:foodappjava/app/app_colors.dart';
-import 'package:foodappjava/app/assets_path.dart';
+import 'package:foodappjava/features/search/presentation/screens/search_result_screen.dart';
 import 'package:foodappjava/features/shared/presentation/utils/icon_card.dart';
 import 'package:foodappjava/features/shared/presentation/widgets/back_button.dart';
+import 'package:foodappjava/features/shared/presentation/widgets/double_container_grid_view.dart';
 import 'package:foodappjava/features/shared/presentation/widgets/search_field.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -41,9 +42,6 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leadingWidth: 90,
-        titleSpacing: 0,
-        toolbarHeight: 80,
         leading: MyBackButton(),
         title: Text("Search", style: TextStyle(fontSize: 17)),
         actions: [
@@ -79,20 +77,25 @@ class _SearchScreenState extends State<SearchScreen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: keywords.length,
                   itemBuilder: (context, index) {
-                    return Chip(
-                      label: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 3,
-                          vertical: 5,
+                    return GestureDetector(
+                      onTap: (){
+                        Navigator.pushNamed(context, SearchResultScreen.name,arguments: keywords[index]);
+                      },
+                      child: Chip(
+                        label: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 3,
+                            vertical: 5,
+                          ),
+                          child: Text(keywords[index]),
                         ),
-                        child: Text(keywords[index]),
-                      ),
-                      color: WidgetStatePropertyAll(Colors.white),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        side: BorderSide(
-                          color: AppColors.chipBorderGrey,
-                          width: 2,
+                        color: WidgetStatePropertyAll(Colors.white),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          side: BorderSide(
+                            color: AppColors.chipBorderGrey,
+                            width: 2,
+                          ),
                         ),
                       ),
                     );
@@ -157,62 +160,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 80),
-              GridView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: 2,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                ),
-                itemBuilder: (context, index) {
-                  return Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      Container(
-                        height:140,
-                        width: 200,
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black12,
-                              blurRadius: 10
-                            )
-                          ]
-
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("European Pizza",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                            Text("Uttora Coffee House",style: TextStyle(color: Color(0xff646982),fontSize: 13),),
-                            SizedBox(height: 15,)
-                          ],
-                        ),
-                      ),
-
-                      Positioned(
-                        top: -50,
-                        left: (200-165)/2,
-                        child: Container(
-                          height: 100,
-                          width: 165,
-                          decoration: BoxDecoration(
-                            color: AppColors.themeGrey,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                      ),
-
-                    ],
-                  );
-                },
-              ),
+              DoubleContainerGridView(title: "European Pizza",restaurantName: "Uttora Coffee House",imageUrl: '',),
 
             ],
           ),
@@ -221,3 +169,4 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 }
+
